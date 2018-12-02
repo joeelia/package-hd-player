@@ -1,9 +1,18 @@
 {
     "name": "Player",
+    "permissions": {
+        "network": "Send data to API endpoint",
+        "gpio": "Access GPIO"
+    },
     "options": [{
         "title": "Configuration",
-        "type": "section",
-        "network": "Send data to API endpoint"
+        "type": "section"
+    }, {
+        "title": "GPIO Pin",
+        "ui_width": 4,
+        "name": "pin",
+        "type": "integer",
+        "default": 11
     }, {
         "title": "Switch time",
         "ui_width": 4,
