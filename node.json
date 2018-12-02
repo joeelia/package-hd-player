@@ -2,7 +2,8 @@
     "name": "Player",
     "options": [{
         "title": "Configuration",
-        "type": "section"
+        "type": "section",
+        "network": "Send data to API endpoint"
     }, {
         "title": "Switch time",
         "ui_width": 4,
