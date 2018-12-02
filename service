@@ -1,6 +1,12 @@
 #!/usr/bin/python
-from hosted import device, node, config, json, os, sys, requests, config
+from hosted import device, node, config, json, os, sys, requests, config, ibquery, requests
 config.restart_on_update()
+
+ib = ibquery.InfoBeamerQuery("127.0.0.1")
+stream = ib.node('root/proof-of-play').io(raw=True)
+
+for event in stream:
+    requests.post("https://example.net/backend", data={"event": event.strip()})
 
 local json = require "json"
 local clients = {}
